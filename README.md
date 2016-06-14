@@ -11,3 +11,5 @@ My to-do list:
 - Add a temporary delete actions tab, where deleted actions can be recovered
 - Figure out a decent encryption system
 - Figure out how to save logins and passwords
+- Add a graphical calendar
+- Create a graphical schedule
