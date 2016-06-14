@@ -7,7 +7,7 @@ I just want to dump something out there onto Github to call it my own.
 It certainly is not perfect, but I may return to it in the future.
 
 My to-do list:
-	- Add edit and delete functions
-	- Add a temporary delete actions tab, where deleted actions can be recovered
-	- Figure out a decent encryption system
-	- Figure out how to save logins and passwords
+- Add edit and delete functions
+- Add a temporary delete actions tab, where deleted actions can be recovered
+- Figure out a decent encryption system
+- Figure out how to save logins and passwords
