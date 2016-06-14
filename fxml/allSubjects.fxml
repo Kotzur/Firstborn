@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AllSubjectsController">
+    <top>
+        <MenuBar fx:id="mainMenuBar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu text="Assignments">
+                    <items>
+                        <MenuItem fx:id="allAssignments" onAction="#handleMenuItem" text="All Assignments" />
+                        <MenuItem fx:id="newAssignment" onAction="#handleMenuItem" text="New Assignment" />
+                    </items>
+                </Menu>
+                <Menu text="Activities">
+                    <items>
+                        <MenuItem fx:id="allActivities" onAction="#handleMenuItem" text="All Activities" />
+                        <MenuItem fx:id="newActivity" onAction="#handleMenuItem" text="New Activity" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Subjects">
+                    <items>
+                        <MenuItem fx:id="allSubjects" onAction="#handleMenuItem" text="All Subjects" />
+                        <MenuItem fx:id="newSubject" onAction="#handleMenuItem" text="New Subject" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+      <TableView fx:id="subjectTableView" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="137.0" text="Name" />
+          <TableColumn fx:id="teacherColumn" prefWidth="150.0" text="Teacher" />
+            <TableColumn fx:id="roomColumn" prefWidth="86.0" text="Room" />
+            <TableColumn fx:id="timeColumn" prefWidth="224.0" text="Class Time" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

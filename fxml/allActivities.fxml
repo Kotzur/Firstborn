@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AllActivitiesController">
+    <top>
+        <MenuBar fx:id="mainMenuBar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu text="Assignments">
+                    <items>
+                        <MenuItem fx:id="allAssignments" onAction="#handleMenuItem" text="All Assignments" />
+                        <MenuItem fx:id="newAssignment" onAction="#handleMenuItem" text="New Assignment" />
+                    </items>
+                </Menu>
+                <Menu text="Activities">
+                    <items>
+                        <MenuItem fx:id="allActivities" onAction="#handleMenuItem" text="All Activities" />
+                        <MenuItem fx:id="newActivity" onAction="#handleMenuItem" text="New Activity" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Subjects">
+                    <items>
+                        <MenuItem fx:id="allSubjects" onAction="#handleMenuItem" text="All Subjects" />
+                        <MenuItem fx:id="newSubject" onAction="#handleMenuItem" text="New Subject" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+      <TableView fx:id="activityTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="126.0" text="Name" />
+          <TableColumn fx:id="supervisorColumn" prefWidth="115.0" text="Supervisor" />
+            <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="49.0" text="Type" />
+            <TableColumn fx:id="durationColumn" prefWidth="87.0" text="Duration" />
+            <TableColumn fx:id="hoursColumn" minWidth="0.0" prefWidth="68.0" text="Hours" />
+            <TableColumn fx:id="timeColumn" prefWidth="154.0" text="Activity Time" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="assignmentBorderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AllAssignmentsController">
+    <top>
+        <MenuBar fx:id="mainMenuBar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu text="Assignments">
+                    <items>
+                        <MenuItem fx:id="allAssignments" onAction="#handleMenuItem" text="All Assignments" />
+                        <MenuItem fx:id="newAssignment" onAction="#handleMenuItem" text="New Assignment" />
+                    </items>
+                </Menu>
+                <Menu text="Activities">
+                    <items>
+                        <MenuItem fx:id="allActivities" onAction="#handleMenuItem" text="All Activities" />
+                        <MenuItem fx:id="newActivity" onAction="#handleMenuItem" text="New Activity" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Subjects">
+                    <items>
+                        <MenuItem fx:id="allSubjects" onAction="#handleMenuItem" text="All Subjects" />
+                        <MenuItem fx:id="newSubject" onAction="#handleMenuItem" text="New Subject" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+
+
+   </center>
+   <center>
+      <TableView fx:id="assignmentsTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="155.0" text="Name" />
+          <TableColumn fx:id="subjectColumn" prefWidth="138.0" text="Subject" />
+            <TableColumn fx:id="typeColumn" prefWidth="93.0" text="Type" />
+            <TableColumn fx:id="priorityColumn" prefWidth="100.0" text="Priority" />
+            <TableColumn fx:id="completeColumn" prefWidth="111.0" text="Complete" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

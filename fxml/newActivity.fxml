@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NewItemController">
+    <top>
+        <MenuBar fx:id="mainMenuBar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu text="Assignments">
+                    <items>
+                        <MenuItem fx:id="allAssignments" onAction="#handleMenuItem" text="All Assignments" />
+                        <MenuItem fx:id="newAssignment" onAction="#handleMenuItem" text="New Assignment" />
+                    </items>
+                </Menu>
+                <Menu text="Activities">
+                    <items>
+                        <MenuItem fx:id="allActivities" onAction="#handleMenuItem" text="All Activities" />
+                        <MenuItem fx:id="newActivity" onAction="#handleMenuItem" text="New Activity" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Subjects">
+                    <items>
+                        <MenuItem fx:id="allSubjects" onAction="#handleMenuItem" text="All Subjects" />
+                        <MenuItem fx:id="newSubject" onAction="#handleMenuItem" text="New Subject" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <left>
+
+      <GridPane alignment="CENTER" hgap="5.0" BorderPane.alignment="CENTER">
+
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" prefWidth="216.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="384.0" prefWidth="384.0" />
+        </columnConstraints>
+
+        <rowConstraints>
+          <RowConstraints maxHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="103.0" prefHeight="63.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="135.0" prefHeight="67.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="157.0" prefHeight="62.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="159.0" prefHeight="74.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="167.0" prefHeight="69.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="167.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+
+
+         <children>
+
+             <!-- Name of the Activity -->
+            <Label text="Name of Activity">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin></Label>
+             <TextField fx:id="activityNameField" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="1">
+                 <GridPane.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                 </GridPane.margin></TextField>
+
+             <!-- Supervisor of the Activity -->
+            <Label text="Activity Supervisor" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin></Label>
+             <TextField fx:id="activitySupervisorField" maxWidth="-Infinity" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                 <opaqueInsets>
+                     <Insets />
+                 </opaqueInsets>
+                 <GridPane.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                 </GridPane.margin>
+             </TextField>
+
+             <!--CAS Type label with a radio button toggle group -->
+             <Label text="CAS Type" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin></Label>
+             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <RadioButton fx:id="creativityRadio" mnemonicParsing="false" selected="true" text="Creativity">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="typeToggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="actionRadio" mnemonicParsing="false" text="Action" toggleGroup="$typeToggleGroup" />
+                  <RadioButton fx:id="serviceRadio" mnemonicParsing="false" text="Service" toggleGroup="$typeToggleGroup" />
+               </children></HBox>
+
+             <!-- Time type (short-, long-term) label with a radio button toggle group -->
+             <Label text="Activity Time Type" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin></Label>
+             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <RadioButton fx:id="shortRadio" mnemonicParsing="false" selected="true" text="Short-term">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="timeToggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="longRadio" mnemonicParsing="false" text="Long-term" toggleGroup="$timeToggleGroup" />
+               </children></HBox>
+
+             <!-- CAS Hours with a text field -->
+            <Label text="Number of Hours" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin></Label>
+             <TextField fx:id="activityHoursField" alignment="CENTER" maxWidth="-Infinity" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                 <GridPane.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                 </GridPane.margin></TextField>
+
+             <!-- Activity Day label and flow pane with checkboxes. Any day from monday to saturday (Can add Sunday, but it will look weird) -->
+             <Label text="Activity Day" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin></Label>
+            <FlowPane alignment="CENTER" hgap="10.0" vgap="8.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <CheckBox fx:id="monBox" text="Monday" />
+                  <CheckBox fx:id="tueBox" text="Tuesday" />
+                  <CheckBox fx:id="wedBox" text="Wednesday" />
+                  <CheckBox fx:id="thurBox" text="Thursday" />
+                  <CheckBox fx:id="friBox" text="Friday" />
+                  <CheckBox fx:id="satBox" text="Saturday" />
+                  <CheckBox fx:id="sunBox" text="Sunday" />
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </FlowPane>
+
+             <!-- Create new activity button (Submition) -->
+            <Button fx:id="newActivityButton" alignment="CENTER_RIGHT" onAction="#handleButtonClick" text="Create New Activity" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin></Button>
+
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+
+      </GridPane>
+   </left>
+</BorderPane>
