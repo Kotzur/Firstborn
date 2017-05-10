@@ -1,5 +1,5 @@
 #Firstborn
-This is essentially the first real java project I made. It's a desktop organizer for students doing the IB diploma with a very simple GUI.
+This is the first java project I made. It's a desktop organizer for students doing the IB diploma with a very simple GUI.
 
 Everything is in JavaFX. It was written in IntelliJ IDE with the help from SceneBuilder.
 
